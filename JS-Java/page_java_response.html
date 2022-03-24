@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page That Will Get Response From Java</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $.get('http://localhost/MyWebServer', function(data) {
+            $('#data').text(data);
+        });
+    </script>
+</head>
+<body>
+    <div id="data"></div>
+</body>
+</html>
