@@ -4,13 +4,41 @@
     <meta charset="UTF-8">
     <title>Page That Will Get Response From Java</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $.get('http://localhost/MyWebServer', function(data) {
-            $('#data').text(data);
-        });
-    </script>
+<!--    <script>-->
+<!--        var xhr = new XMLHttpRequest();-->
+<!--        xhr.withCredentials = true;-->
+<!--        var data = xhr.open('GET', 'http://localhost:8080');-->
+<!--        $('#data').text('text');-->
+<!--    </script>-->
+<!--    <script>-->
+<!--       let my_url = 'http://localhost:8080';-->
+<!--       $.ajax({-->
+<!--           url: my_url,-->
+<!--           xhrFields: {-->
+<!--               withCredentials: true-->
+<!--           },-->
+<!--          crossDomain : true-->
+<!--        });-->
+<!--        $.get(my_url, function(data) {-->
+<!--            $('#data').text(data);-->
+<!--        });-->
+<!--    </script>-->
 </head>
 <body>
     <div id="data"></div>
+    <div id="div2">
+        <h1 id="header"></h1>
+    </div>
+    <script>
+        function reqListener() {
+            console.log(this.responseText);
+            $(header).text(this.responseText);
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        xhr.addEventListener('load', reqListener);
+        xhr.open('GET', 'http://localhost:8080');
+        xhr.send();
+    </script>
 </body>
 </html>
