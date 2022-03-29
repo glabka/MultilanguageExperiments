@@ -1,4 +1,4 @@
-package com.glabka.main;
+package main.webapp;
 
 
 import javax.servlet.*;
@@ -7,14 +7,16 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(urlPatterns = {"/MyWebServer"})
-public class Main extends HttpServlet {
+@WebServlet(urlPatterns = {"/javaserver"}, loadOnStartup=1)
+public class MyServlet extends HttpServlet {
 
     private String message;
 
+    @Override
     public void init() throws ServletException {
         // Do required initialization
         message = "Hello World";
+        System.out.println("log");
     }
 
     @Override
@@ -25,9 +27,10 @@ public class Main extends HttpServlet {
 
         // Actual logic goes here.
         PrintWriter out = response.getWriter();
-        out.println("<h1>" + message + "</h1>");
+        out.println(message);
     }
 
+    @Override
     public void destroy() {
         // do nothing.
     }

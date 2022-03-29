@@ -5,9 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>groupId</groupId>
-    <artifactId>JavaServer</artifactId>
+    <artifactId>MyServlet</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <src.dir>src</src.dir>
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
+    </properties>
+    <build>
+        <sourceDirectory>${src.dir}</sourceDirectory>
+    </build>
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -23,9 +31,5 @@
         </dependency>
     </dependencies>
 
-    <properties>
-        <maven.compiler.source>14</maven.compiler.source>
-        <maven.compiler.target>14</maven.compiler.target>
-    </properties>
 
 </project>
